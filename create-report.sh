@@ -37,3 +37,12 @@ echo "items not in bdrc-khmermanuscripts that should be:" >> report.log
 echo "\n" >> report.log
 grep FEMC cache/ia-bdrc.txt | grep -vx -f cache/ia-bdrc-khmermanuscripts.txt | sort | sed 's/^/bdrc-/' >> report.log
 echo "\n" >> report.log
+echo "items not in bdrc-stream_only that should be:" >> report.log
+echo "\n" >> report.log
+grep -vx -f cache/ia-bdrc-restricted.txt cache/ia-bdrc.txt | grep -vx -f cache/ia-bdrc-stream_only.txt | sort | sed 's/^/bdrc-/' >> report.log
+echo "\n" >> report.log
+echo "\n" >> report.log
+echo "items in bdrc-stream_only that should not be:" >> report.log
+echo "\n" >> report.log
+grep -x -f cache/ia-bdrc-restricted.txt cache/ia-bdrc-stream_only.txt | sort | sed 's/^/bdrc-/' >> report.log
+echo "\n" >> report.log
