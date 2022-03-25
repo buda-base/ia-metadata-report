@@ -27,3 +27,13 @@ echo "items not in inlibrary that should be:" >> report.log
 echo "\n" >> report.log
 grep -vx -f cache/ia-inlibrary.txt cache/bdrc-mustbeinlibrary.txt | grep -vx -f input/unlisted.txt | grep -vx -f input/derivedfailed.txt | sort | sed 's/^/bdrc-/' >> report.log
 echo "\n" >> report.log
+echo "\n" >> report.log
+echo "items not in bdrc-fplmanuscripts that should be:" >> report.log
+echo "\n" >> report.log
+grep FPL cache/ia-bdrc.txt | grep -vx -f cache/ia-bdrc-fplmanuscripts.txt | sort | sed 's/^/bdrc-/' >> report.log
+echo "\n" >> report.log
+echo "\n" >> report.log
+echo "items not in bdrc-khmermanuscripts that should be:" >> report.log
+echo "\n" >> report.log
+grep FEMC cache/ia-bdrc.txt | grep -vx -f cache/ia-bdrc-khmermanuscripts.txt | sort | sed 's/^/bdrc-/' >> report.log
+echo "\n" >> report.log
