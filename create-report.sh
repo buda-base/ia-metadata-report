@@ -31,6 +31,7 @@ echo "\n" >> report.log
 echo "items not in bdrc-fplmanuscripts that should be:" >> report.log
 echo "\n" >> report.log
 grep FPL cache/ia-bdrc.txt | grep -vx -f cache/ia-bdrc-fplmanuscripts.txt | sort | sed 's/^/bdrc-/' >> report.log
+grep 1EAP cache/ia-bdrc.txt | grep -vx -f cache/ia-bdrc-fplmanuscripts.txt | sort | sed 's/^/bdrc-/' >> report.log
 echo "\n" >> report.log
 echo "\n" >> report.log
 echo "items not in bdrc-khmermanuscripts that should be:" >> report.log

@@ -14,4 +14,4 @@
 - items from FEMC should be in the `bdrc-palmleafmanuscripts` and `bdrc-khmermanuscripts` collections
 - items with `access == open` should be:
    * in `buddhist-digital-resource-center-restricted` if `restrictedInChina == true`
-   * in `stream_only` collection otherwise
+   * in `stream_only` if `restrictedInChina == false`
