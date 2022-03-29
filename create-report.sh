@@ -15,7 +15,7 @@ echo "\n" >> report.log
 echo "\n" >> report.log
 echo "items not in buddhist-digital-resource-center-restricted that should be:" >> report.log
 echo "\n" >> report.log
-grep -vx -f cache/ia-bdrc-restricted.txt cache/bdrc-mustbeinbdrcrestricted.txt | grep -vx -f input/unlisted.txt | grep -vx -f input/derivedfailed.txt | sort | sed 's/^/bdrc-/' >> report.log
+grep -vx -f cache/ia-bdrc-restricted.txt cache/bdrc-mustbeinbdrcrestricted.txt | grep -x -f cache/ia-bdrc.txt | sort | sed 's/^/bdrc-/' >> report.log
 echo "\n" >> report.log
 echo "\n" >> report.log
 echo "items in inlibrary that should not be:" >> report.log
@@ -25,7 +25,7 @@ echo "\n" >> report.log
 echo "\n" >> report.log
 echo "items not in inlibrary that should be:" >> report.log
 echo "\n" >> report.log
-grep -vx -f cache/ia-inlibrary.txt cache/bdrc-mustbeinlibrary.txt | grep -vx -f input/unlisted.txt | grep -vx -f input/derivedfailed.txt | sort | sed 's/^/bdrc-/' >> report.log
+grep -vx -f cache/ia-inlibrary.txt cache/bdrc-mustbeinlibrary.txt | grep -x -f cache/ia-bdrc.txt | sort | sed 's/^/bdrc-/' >> report.log
 echo "\n" >> report.log
 echo "\n" >> report.log
 echo "items not in bdrc-fplmanuscripts that should be:" >> report.log
@@ -38,12 +38,22 @@ echo "items not in bdrc-khmermanuscripts that should be:" >> report.log
 echo "\n" >> report.log
 grep FEMC cache/ia-bdrc.txt | grep -vx -f cache/ia-bdrc-khmermanuscripts.txt | sort | sed 's/^/bdrc-/' >> report.log
 echo "\n" >> report.log
-echo "items not in bdrc-stream_only that should be:" >> report.log
 echo "\n" >> report.log
-grep -vx -f cache/ia-bdrc-restricted.txt cache/ia-bdrc.txt | grep -vx -f cache/ia-bdrc-stream_only.txt | sort | sed 's/^/bdrc-/' >> report.log
+echo "items in geo_restricted that should not be:" >> report.log
+echo "\n" >> report.log
+grep -vx -f cache/bdrc-mustbeingeorestricted.txt cache/ia-geo_restricted.txt | grep -vx -f input/unlisted.txt | grep -vx -f input/derivedfailed.txt | sort | sed 's/^/bdrc-/' >> report.log
 echo "\n" >> report.log
 echo "\n" >> report.log
-echo "items in bdrc-stream_only that should not be:" >> report.log
+echo "items not in geo_restricted that should be:" >> report.log
 echo "\n" >> report.log
-grep -x -f cache/ia-bdrc-restricted.txt cache/ia-bdrc-stream_only.txt | sort | sed 's/^/bdrc-/' >> report.log
+grep -vx -f cache/ia-geo_restricted.txt cache/bdrc-mustbeingeorestricted.txt | grep -x -f cache/ia-bdrc.txt | sort | sed 's/^/bdrc-/' >> report.log
 echo "\n" >> report.log
+#echo "items not in bdrc-stream_only that should be:" >> report.log
+#echo "\n" >> report.log
+#grep -vx -f cache/ia-bdrc-restricted.txt cache/ia-bdrc.txt | grep -vx -f cache/ia-bdrc-stream_only.txt | sort | sed 's/^/bdrc-/' >> report.log
+#echo "\n" >> report.log
+#echo "\n" >> report.log
+#echo "items in bdrc-stream_only that should not be:" >> report.log
+#echo "\n" >> report.log
+#grep -x -f cache/ia-bdrc-restricted.txt cache/ia-bdrc-stream_only.txt | sort | sed 's/^/bdrc-/' >> report.log
+#echo "\n" >> report.log
