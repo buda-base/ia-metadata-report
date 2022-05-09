@@ -1083,7 +1083,6 @@ bdrc-W22359
 bdrc-W22378
 bdrc-W23171
 bdrc-W23175
-bdrc-W23446
 bdrc-W23567
 bdrc-W23663
 bdrc-W23664
@@ -1106,7 +1105,6 @@ bdrc-W24679
 bdrc-W24824
 bdrc-W24826
 bdrc-W24827
-bdrc-W24829
 bdrc-W24886
 bdrc-W25006
 bdrc-W25007
@@ -1185,7 +1183,6 @@ bdrc-W28970
 bdrc-W28979
 bdrc-W28983
 bdrc-W29013
-bdrc-W29031
 bdrc-W29032
 bdrc-W29091
 bdrc-W29092
@@ -1194,7 +1191,6 @@ bdrc-W29114
 bdrc-W29144
 bdrc-W29157
 bdrc-W29186
-bdrc-W29232
 bdrc-W29233
 bdrc-W29234
 bdrc-W29237
@@ -1208,10 +1204,7 @@ bdrc-W29267
 bdrc-W29278
 bdrc-W29295
 bdrc-W29298
-bdrc-W29329
 bdrc-W29478
-bdrc-W29483
-bdrc-W29486
 bdrc-W29488
 bdrc-W29489
 bdrc-W29493
@@ -1241,7 +1234,6 @@ bdrc-W29901
 bdrc-W29975
 bdrc-W29978
 bdrc-W29980
-bdrc-W29982
 bdrc-W29987
 bdrc-W29989
 bdrc-W29993
@@ -1257,7 +1249,6 @@ bdrc-W2CZ6656
 bdrc-W2CZ6767
 bdrc-W2CZ6771
 bdrc-W2CZ6779
-bdrc-W2CZ7848
 bdrc-W2CZ7859
 bdrc-W2CZ7868
 bdrc-W2CZ7876
@@ -1277,24 +1268,16 @@ bdrc-W2CZ8050
 bdrc-W2CZ8057
 bdrc-W2CZ8058
 bdrc-W2CZ8064
-bdrc-W2CZ8089
-bdrc-W2CZ8091
 bdrc-W2CZ8093
 bdrc-W2CZ9121
 bdrc-W2CZ9131
 bdrc-W2CZ9154
-bdrc-W2DB13639
 bdrc-W2DB13645
 bdrc-W2DB16421
 bdrc-W2DB16422
-bdrc-W2DB16428
 bdrc-W2DB25060
-bdrc-W2DB25427
-bdrc-W2DB25428
-bdrc-W2DB25429
 bdrc-W2DB25438
 bdrc-W2DB25449
-bdrc-W2DB25450
 bdrc-W2DB25466
 bdrc-W2DB35089
 bdrc-W2DB35090
@@ -3692,7 +3675,6 @@ bdrc-W22359
 bdrc-W22378
 bdrc-W23171
 bdrc-W23175
-bdrc-W23446
 bdrc-W23567
 bdrc-W23663
 bdrc-W23664
@@ -3715,7 +3697,6 @@ bdrc-W24679
 bdrc-W24824
 bdrc-W24826
 bdrc-W24827
-bdrc-W24829
 bdrc-W24886
 bdrc-W25006
 bdrc-W25007
@@ -3794,7 +3775,6 @@ bdrc-W28970
 bdrc-W28979
 bdrc-W28983
 bdrc-W29013
-bdrc-W29031
 bdrc-W29032
 bdrc-W29091
 bdrc-W29092
@@ -3803,7 +3783,6 @@ bdrc-W29114
 bdrc-W29144
 bdrc-W29157
 bdrc-W29186
-bdrc-W29232
 bdrc-W29233
 bdrc-W29234
 bdrc-W29237
@@ -3818,10 +3797,7 @@ bdrc-W29267
 bdrc-W29278
 bdrc-W29295
 bdrc-W29298
-bdrc-W29329
 bdrc-W29478
-bdrc-W29483
-bdrc-W29486
 bdrc-W29488
 bdrc-W29489
 bdrc-W29493
@@ -3851,7 +3827,6 @@ bdrc-W29901
 bdrc-W29975
 bdrc-W29978
 bdrc-W29980
-bdrc-W29982
 bdrc-W29987
 bdrc-W29989
 bdrc-W29993
@@ -3867,7 +3842,6 @@ bdrc-W2CZ6656
 bdrc-W2CZ6767
 bdrc-W2CZ6771
 bdrc-W2CZ6779
-bdrc-W2CZ7848
 bdrc-W2CZ7859
 bdrc-W2CZ7868
 bdrc-W2CZ7876
@@ -3886,24 +3860,16 @@ bdrc-W2CZ8046
 bdrc-W2CZ8050
 bdrc-W2CZ8057
 bdrc-W2CZ8058
-bdrc-W2CZ8089
-bdrc-W2CZ8091
 bdrc-W2CZ8093
 bdrc-W2CZ9121
 bdrc-W2CZ9131
 bdrc-W2CZ9154
-bdrc-W2DB13639
 bdrc-W2DB13645
 bdrc-W2DB16421
 bdrc-W2DB16422
-bdrc-W2DB16428
 bdrc-W2DB25060
-bdrc-W2DB25427
-bdrc-W2DB25428
-bdrc-W2DB25429
 bdrc-W2DB25438
 bdrc-W2DB25449
-bdrc-W2DB25450
 bdrc-W2DB25466
 bdrc-W2DB35089
 bdrc-W2DB35090
@@ -5790,7 +5756,6 @@ bdrc-W1PD105801
 bdrc-W1PD105852
 bdrc-W1PD107937
 bdrc-W1PD108087
-bdrc-W1PD133163
 bdrc-W1PD137888
 bdrc-W1PD152297
 bdrc-W1PD159415
@@ -5889,7 +5854,6 @@ bdrc-W22186
 bdrc-W22188
 bdrc-W22200
 bdrc-W22247
-bdrc-W22250
 bdrc-W22273
 bdrc-W22277
 bdrc-W22280
@@ -5909,7 +5873,6 @@ bdrc-W23198
 bdrc-W23345
 bdrc-W23435
 bdrc-W23437
-bdrc-W23446
 bdrc-W23450
 bdrc-W23453
 bdrc-W23471
@@ -5918,10 +5881,8 @@ bdrc-W23633
 bdrc-W23635
 bdrc-W23637
 bdrc-W23638
-bdrc-W23648
 bdrc-W23664
 bdrc-W23674
-bdrc-W23681
 bdrc-W23690
 bdrc-W23693
 bdrc-W23696
@@ -5975,7 +5936,6 @@ bdrc-W29157
 bdrc-W29195
 bdrc-W29219
 bdrc-W29222
-bdrc-W29232
 bdrc-W29233
 bdrc-W29237
 bdrc-W29238
@@ -5985,7 +5945,6 @@ bdrc-W29251
 bdrc-W29260
 bdrc-W29263
 bdrc-W29307
-bdrc-W29329
 bdrc-W29468
 bdrc-W29509
 bdrc-W29628
@@ -6020,13 +5979,10 @@ bdrc-W2CZ8008
 bdrc-W2CZ8047
 bdrc-W2CZ8056
 bdrc-W2CZ8060
-bdrc-W2CZ8076
 bdrc-W2CZ8080
 bdrc-W2CZ8093
 bdrc-W2CZ8096
 bdrc-W2DB16425
-bdrc-W2DB25427
-bdrc-W2DB25428
 bdrc-W2DB4577
 bdrc-W2DB4588
 bdrc-W2DB4590
