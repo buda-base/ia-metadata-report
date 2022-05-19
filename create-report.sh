@@ -5,7 +5,7 @@ echo "\n" >> report.log
 echo "\n" >> report.log
 echo "unlisted items that should be listed:" >> report.log
 echo "\n" >> report.log
-grep -vx -f cache/bdrc-mustbeunlinsted.txt input/unlisted.txt | grep -vx -f input/derivedfailed.txt | sed 's/^/bdrc-/' >> report.log
+grep -vx -f cache/bdrc-mustbeunlinsted.txt input/unlisted.txt | grep -vx -f input/derivedfailed.txt | grep -vx -f cache/ia-bdrc.txt | sed 's/^/bdrc-/' >> report.log
 echo "\n" >> report.log
 echo "\n" >> report.log
 echo "items in buddhist-digital-resource-center-restricted that should not be:" >> report.log
