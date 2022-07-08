@@ -31,3 +31,20 @@ grep -v bdrc ../../report.log | grep -v '^[[:space:]]*$' >> 2022-07-06-uploaded-
 # -------------
 # Look for the uploads in the report
 grep -f 2022-07-06-uploaded-derived.lst ../../report.log > 2022-07-06-uploads-still-badcat.txt
+ln -s 2022-07-06-uploads-still-badcat.txt badcat.lst
+#
+# Get the actual collections list these works are in
+while read awork ; do printf $awork ; ia metadata $awork | jq '.metadata.collection' | tee -a collections/$awork.json ; done < badcat.lst | tee collections/badcat.json
+#
+# collections analysis:
+#
+# Everything in unlisted items that should be listed
+# Has these collections
+                #bdrc-W1KG25365[
+                #  "buddhist-digital-resource-center",
+                #  "buddhist-digital-resource-center-restricted",
+                #  "inlibrary"
+                # ]
+# The fillcache query:
+# ia search 'collection:buddhist-digital-resource-center' | sed -re 's/^\{"identifier": "bdrc-(.*)"\}$/\1/g' | sort | grep '^W' > cache/ia-bdrc.txt
+
