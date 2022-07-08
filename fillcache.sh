@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+
+set -v
 ia search 'collection:buddhist-digital-resource-center AND collection:inlibrary' | sed -re 's/^\{"identifier": "bdrc-(.*)"\}$/\1/g' | sort > cache/ia-inlibrary.txt
 ia search 'collection:buddhist-digital-resource-center' | sed -re 's/^\{"identifier": "bdrc-(.*)"\}$/\1/g' | sort | grep '^W' > cache/ia-bdrc.txt
 ia search 'collection:buddhist-digital-resource-center AND collection:geo_restricted' | sed -re 's/^\{"identifier": "bdrc-(.*)"\}$/\1/g' | sort > cache/ia-geo_restricted.txt
