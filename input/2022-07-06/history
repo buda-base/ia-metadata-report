@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+# ------------------------
+# 1. Get the list of things that have failed derive
+
+../../update-derive-fails.sh
+# Essentially # ia tasks --red-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' | sort > "${ftnow}".derivefailed.lst
+# ---------------------------------
+# 2. Derive the list of uploaded works from the ia service log extract (externally prepared)
+# the list is a set of paths, need to extract the work only
+sed -re 's@.*/(W[0-9].*)@\1@'  /Volumes/home/prod/ao645/2022-07-06-ia-up.lst | sort -u > 2022-07-06-ia-upload.lst
+
+#-----------------------------------
+# 3. remove the failed derives. Both files are sorted
+comm -23 2022-07-06-ia-upload.lst derivefailed.lst > 2022-07-06-uploaded-derived.lst
+ln -s 2022-07-06-uploaded-derived.lst uploaded-derived.lst
+#------------------------------------
+# 4. which of the uploaded-derived is in the list of wrong catalogs (Assume they're both up to date)
+# Add the categories to the search file
+grep -v bdrc ../../report.log | grep -v '^[[:space:]]*$' >> .tmp
+# Should add these lines
+#listed items that should be unlisted:
+#unlisted items that should be listed:
+#items in buddhist-digital-resource-center-restricted that should not be:
+#items not in buddhist-digital-resource-center-restricted that should be:
+#items in inlibrary that should not be:
+#items not in inlibrary that should be:
+#items in geo_restricted that should not be:
+#items not in geo_restricted that should be:
+grep -v bdrc ../../report.log | grep -v '^[[:space:]]*$' >> 2022-07-06-uploaded-derived.lst
+# -------------
+# Look for the uploads in the report
+grep -f 2022-07-06-uploaded-derived.lst ../../report.log > 2022-07-06-uploads-still-badcat.txt
