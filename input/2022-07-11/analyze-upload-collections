@@ -39,14 +39,14 @@ grep -v bdrc ../../report.log | grep -v '^[[:space:]]*$' >> derived-uploads.lst
 # -------------
 # Look for the uploads in the report
 #
-# BAD LINE BAD BAD LINE!
-# grep -f brings in some failed uploads
-# grep -f derived-uploads.lst ../../report.log > 2022-07-11-uploads-still-badcat.lst
+
+# grep -f brings in some failed uploads - because of prefixes: bdrc-W00KG03 brings in bdrc-W00KG03658
+grep -fw derived-uploads.lst ../../report.log > 2022-07-11-uploads-still-badcat.lst
 rm 2022-07-11-uploads-still-badcat.lst
 set -vx
 while IFS= read -r pattern; do
     grep "$pattern" ../../report.log
-done < derived-uploads.lst > frelm
+done < derived-uploads.lst  | less
 set +vx
 #
 # This will show which works appear in multiple list of failures, although not the specific
@@ -57,7 +57,9 @@ sort badcat.lst > dups.badcat.lst
 # This line creates a json file for each bad work
 # while read awork ; do printf $awork ; ia metadata $awork | jq '.metadata.collection' | tee -a collections/$awork.json ; done < badcat.lst | tee collections/2022-07-11-badcat.json
 # Just create one
-while read awork ; do printf $awork ; ia metadata $awork | jq '.metadata.collection' ; done < badcat.lst | tee collections/2022-07-11-badcat.json
+# Warning! This works right in ZSH, but doesnt in bash
+# Try cat badcat.lst | parallel 'printf ":%s:\t" {} ; ia metadata {} | jq .metadata.collection
+while read awork ; do ia metadata $awork | jq '.metadata.collection' ; done < badcat.lst | tee collections/2022-07-11-badcat.json
 #
 # collections analysis:
 #
