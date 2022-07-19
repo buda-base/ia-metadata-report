@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
-
+set -vx
+# Set time specific enviro vars
+export UPLOAD_WORK_LIST=$(date +%Y-%m-%d)-ia-uploads.lst
 # ------------------------
 # 1. Get the list of things that have failed derive
-
+# Run from .../ia-metadata-report/input/YYYY-mm-dd
 # ../../update-derive-fails.sh
 # Essentially # ia tasks --red-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' | sort > "${ftnow}".derivedfailed.lst
 # ln -s ${ftnow}.derivedfails.lst derivedfails.lst
@@ -11,17 +13,22 @@
 # (grep 'ia status: 0' sattva:~service/tmp/ia-con)
 # the list is a set of paths, need to extract the work only
 
-sed -re 's@.*/(W[0-9].*)@\1@'  /Volumes/home/prod/ao645/2022-06-09-ia-feed-success.lst | sort -u > 2022-07-11-ia-upload.lst
+sed -re 's@.*/(W[0-9].*)@\1@'  /Volumes/home/prod/ao645/2022-06-09-ia-feed-success.lst | sort -u > "${UPLOAD_WORK_LIST}"
 # 2a. Remove the works which are still deriving, or not yet derived.
-ia tasks --blue-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g'  > derive-incomplete.lst
+# HACK - this is still
+cp ../Timb-derive-incomplete.lst derive-incomplete.lst
+#
+# Run these, and the rest, as ia-uploader@tbrc.org
+ia tasks --blue-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g'  >> derive-incomplete.lst
 ia tasks --green-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' >> derive-incomplete.lst
 ia tasks --red-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' >> derive-incomplete.lst
 #
 # 3. Remove all the failed or in process works
 sort -u derive-incomplete.lst > excluded-works.lst
+
 #
 # 4. Find the list of derived uploads
-grep -vf excluded-works.lst  2022-07-11-ia-upload.lst > derived-uploads.lst
+grep -vf excluded-works.lst  "${UPLOAD_WORK_LIST}" > derived-uploads.lst
 
 #------------------------------------
 # 5. which of the uploaded-derived is in the list of wrong catalogs (Assume they're both up to date)
