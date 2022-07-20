@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -vx
 # Set time specific enviro vars
-export UPLOAD_WORK_LIST=$(date +%Y-%m-%d)-ia-uploads.lst
+export run_date=$(date +%Y-%m-%d)
+export UPLOAD_WORK_LIST=-ia-uploads.lst
 # ------------------------
 # 1. Get the list of things that have failed derive
 # Run from .../ia-metadata-report/input/YYYY-mm-dd
@@ -18,7 +19,7 @@ sed -re 's@.*/(W[0-9].*)@\1@'  /Volumes/home/prod/ao645/2022-06-09-ia-feed-succe
 # HACK - this is still
 cp ../Timb-derive-incomplete.lst derive-incomplete.lst
 #
-# Run these, and the rest, as ia-uploader@tbrc.org
+# Run these, and the rest, as Timb@tbrc.org
 ia tasks --blue-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g'  >> derive-incomplete.lst
 ia tasks --green-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' >> derive-incomplete.lst
 ia tasks --red-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' >> derive-incomplete.lst
@@ -48,7 +49,7 @@ grep -vf excluded-works.lst  "${UPLOAD_WORK_LIST}" > derived-uploads.lst
 # Look for the uploads in the report
 #
 
-grep -x -f derived-uploads.lst ../../report.log > 2022-07-19-uploads-still-badcat.lst
+grep -x -f derived-uploads.lst ../../report.log > "${run_date}"-uploads-still-badcat.lst
 
 #
 # This will show which works appear in multiple list of failures, although not the specific
@@ -61,7 +62,7 @@ sort badcat.lst > dups.badcat.lst
 # Just create one
 # Warning! This works right in ZSH, but doesnt in bash
 # Try cat badcat.lst | parallel 'printf ":%s:\t" {} ; ia metadata {} | jq .metadata.collection
-while read awork ; do ia metadata $awork | jq '.metadata.collection' ; done < badcat.lst | tee collections/2022-07-19-badcat.json
+while read awork ; do printf "%s:\n" $awork ; ia metadata $awork | jq '.metadata.collection' ; done < badcat.lst | tee collections/"${run_date}"-badcat.json
 #
 # collections analysis:
 #

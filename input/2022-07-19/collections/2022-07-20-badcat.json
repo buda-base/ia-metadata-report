@@ -1,0 +1,542 @@
+listed items that should be unlisted::
+null
+unlisted items that should be listed::
+null
+bdrc-W3CN3207:
+[
+  "buddhist-digital-resource-center",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+items in buddhist-digital-resource-center-restricted that should not be::
+null
+bdrc-W4CZ354413:
+[
+  "buddhist-digital-resource-center",
+  "stream_only",
+  "buddhist-digital-resource-center-restricted"
+]
+items not in buddhist-digital-resource-center-restricted that should be::
+null
+bdrc-W1KG13802:
+"buddhist-digital-resource-center"
+bdrc-W1KG24215:
+"buddhist-digital-resource-center"
+bdrc-W1PD105783:
+"buddhist-digital-resource-center"
+bdrc-W3CN3329:
+"buddhist-digital-resource-center"
+bdrc-W3CN5475:
+"buddhist-digital-resource-center"
+items in inlibrary that should not be::
+null
+bdrc-W00KG0619:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1AB6:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1AB7:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG109088:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG109094:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG109095:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG109096:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG109097:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG109098:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG109099:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG109100:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG116063:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG15416:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG15580:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG15896:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG20787:
+[
+  "buddhist-digital-resource-center",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG21998:
+[
+  "buddhist-digital-resource-center",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG22420:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG23742:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG23749:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG23754:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG23757:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG24217:
+[
+  "buddhist-digital-resource-center",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG24524:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG25909:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG25915:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG6202:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG91163:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG91164:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG91165:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG91166:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W1KG91171:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W2CZ7990:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W2KG207346:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W2KG207347:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W2KG207551:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W2KG207552:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W2KG207553:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W2KG207554:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W3CN17676:
+[
+  "buddhist-digital-resource-center",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W3CN17679:
+[
+  "buddhist-digital-resource-center",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W3CN17685:
+[
+  "buddhist-digital-resource-center",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W3CN9674:
+[
+  "buddhist-digital-resource-center",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W4CZ294740:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ294911:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ294913:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ294914:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ294915:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ294916:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ294917:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ294918:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ294919:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ294922:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ294923:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ294924:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ295065:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ295070:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ295071:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ295072:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ295074:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ295075:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ295076:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ295077:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ295078:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ295080:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ295081:
+[
+  "buddhist-digital-resource-center",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W4CZ295084:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "inlibrary"
+]
+bdrc-W4CZ295937:
+[
+  "buddhist-digital-resource-center",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W8LS16366:
+[
+  "buddhist-digital-resource-center",
+  "stream_only",
+  "inlibrary"
+]
+bdrc-W8LS23999:
+[
+  "buddhist-digital-resource-center",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W8LS26176:
+[
+  "buddhist-digital-resource-center",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W8LS32706:
+[
+  "buddhist-digital-resource-center",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W8LS42293:
+[
+  "buddhist-digital-resource-center",
+  "geo_restricted",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+bdrc-W8LS76094:
+[
+  "buddhist-digital-resource-center",
+  "buddhist-digital-resource-center-restricted",
+  "inlibrary"
+]
+items not in inlibrary that should be::
+null
+bdrc-W1KG13802:
+"buddhist-digital-resource-center"
+bdrc-W1PD105783:
+"buddhist-digital-resource-center"
+bdrc-W3CN3329:
+"buddhist-digital-resource-center"
+bdrc-W3CN5475:
+"buddhist-digital-resource-center"
+items in geo_restricted that should not be::
+null
+items not in geo_restricted that should be::
+null
+bdrc-W1KG13802:
+"buddhist-digital-resource-center"
+bdrc-W1KG24215:
+"buddhist-digital-resource-center"
+bdrc-W20548:
+[
+  "buddhist-digital-resource-center",
+  "stream_only"
+]
+bdrc-W23184:
+"buddhist-digital-resource-center"
+bdrc-W23185:
+"buddhist-digital-resource-center"
+bdrc-W3CN4693:
+"buddhist-digital-resource-center"
