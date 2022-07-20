@@ -33,7 +33,8 @@ grep -vf excluded-works.lst  "${UPLOAD_WORK_LIST}" > derived-uploads.lst
 #------------------------------------
 # 5. which of the uploaded-derived is in the list of wrong catalogs (Assume they're both up to date)
 # Add the categories to the search file:
-grep -v bdrc ../../report.log | grep -v '^[[:space:]]*$' >> derived-uploads.lst
+# Revised: - we don't do this anymore - we can find the errors once we've found the works
+# grep -v bdrc ../../report.log | grep -v '^[[:space:]]*$' >> derived-uploads.lst
 # Should add these lines
 #listed items that should be unlisted:
 #unlisted items that should be listed:
@@ -47,14 +48,8 @@ grep -v bdrc ../../report.log | grep -v '^[[:space:]]*$' >> derived-uploads.lst
 # Look for the uploads in the report
 #
 
-# grep -f brings in some failed uploads - because of prefixes: bdrc-W00KG03 brings in bdrc-W00KG03658
-grep -fw derived-uploads.lst ../../report.log > 2022-07-11-uploads-still-badcat.lst
-rm 2022-07-11-uploads-still-badcat.lst
-set -vx
-while IFS= read -r pattern; do
-    grep "$pattern" ../../report.log
-done < derived-uploads.lst  | less
-set +vx
+grep -x -f derived-uploads.lst ../../report.log > 2022-07-19-uploads-still-badcat.lst
+
 #
 # This will show which works appear in multiple list of failures, although not the specific
 # failures
@@ -66,7 +61,7 @@ sort badcat.lst > dups.badcat.lst
 # Just create one
 # Warning! This works right in ZSH, but doesnt in bash
 # Try cat badcat.lst | parallel 'printf ":%s:\t" {} ; ia metadata {} | jq .metadata.collection
-while read awork ; do ia metadata $awork | jq '.metadata.collection' ; done < badcat.lst | tee collections/2022-07-11-badcat.json
+while read awork ; do ia metadata $awork | jq '.metadata.collection' ; done < badcat.lst | tee collections/2022-07-19-badcat.json
 #
 # collections analysis:
 #
