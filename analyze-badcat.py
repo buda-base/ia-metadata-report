@@ -9,17 +9,18 @@ Invert the dictionary, to show:
 import sys
 import csv
 
-def csv_dict(a_dict: {}, out_path: str, headings: []):
+def csv_dict(text: [], out_path: str, headings: []):
     """
     Writes a dictionary to a csv
     :param a_dict: object to write
     :param out_path: output file
     :return:
     """
+
     with open (out_path, 'w') as fd:
-        csvwr = csv.writer(fd, delimiter='\t')
-        for di in a_dict.keys():
-            csvwr.writerow([di, a_dict[di]])
+        csv_wr = csv.DictWriter(fd, delimiter='\t', fieldnames=headings)
+        csv_wr.writeheader()
+        csv_wr.writerows(text)
 
 
 error_dict: {} = {}
@@ -33,7 +34,9 @@ with open (sys.argv[1], 'r', newline='\n') as data_file:
             error_dict[line] = []
         else:
             error_dict[key_line].append(line)
-csv_dict(error_dict, "works_by_error.tsv", ['Error Type', 'works'])
+
+error_list: [] = [ { 'Error': di, 'works' : error_dict[di]} for di in error_dict.keys()]
+csv_dict(error_list, "works_by_error.tsv", ['Error', 'works'])
 
 # print(error_dict)
 
@@ -47,7 +50,8 @@ for di in error_dict.keys():
             error_inversion[di_work] = []
         error_inversion[di_work].append(di)
 
-csv_dict(error_inversion, "errors_by_work.tsv", ['work', 'errors'])
+inv_list: [] = [{ 'work': di, 'Errors' : error_inversion[di]} for di in error_inversion.keys()]
+csv_dict(inv_list, "errors_by_work.tsv", ['work', 'Errors'])
 # for ei in error_inversion:
 #     print(ei)
 
