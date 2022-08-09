@@ -1,0 +1,72 @@
+#!/usr/bin/env bash
+set -vx
+# Set time specific enviro vars
+export run_date=$(date +%Y-%m-%d)
+export UPLOAD_WORK_LIST=ia-uploads.lst
+# ------------------------
+# 1. Derive the list of uploaded works from the ia service log extract
+# (grep 'ia status: 0' sattva:~service/tmp/ia-con)
+# the list is a set of paths, need to extract the work only
+
+sed -re 's@.*/(W[0-9].*)@\1@'  /Volumes/home/prod/ao645/2022-06-09-ia-feed-success.lst | sort -u > "${UPLOAD_WORK_LIST}"
+# 2a. Remove the works which are still deriving, or not yet derived.
+#
+# Run these, and the rest, as Timb@tbrc.org
+# Rats - ia 3.0.2 takes this away
+# ia tasks --blue-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g'  >> derive-incomplete.lst
+# ia tasks --green-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' >> derive-incomplete.lst
+# ia tasks --red-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' >> derive-incomplete.lst
+# Run this as timb@tbrc.org
+ia tasks > tim-tasks.json
+# Just get all the incomplete derives, who cares why
+cat tim-tasks.json| jq '. | select(.cmd = "derive.php") |  .identifier' | sed -e 's/"//g' -e 's/bdrc-//' | sort -u > excluded-works.lst
+#
+# For more detail,... select(.color == "red") and .cmd == "derive.php")
+# 4. Find the list of derived uploads
+grep -vf excluded-works.lst  "${UPLOAD_WORK_LIST}" > derived-uploads.lst
+
+#------------------------------------
+# 5. which of the uploaded-derived is in the list of wrong catalogs (Assume they're both up to date)
+# Add the categories to the search file:
+# Revised: - we don't do this anymore - we can find the errors once we've found the works
+# grep -v bdrc ../../report.log | grep -v '^[[:space:]]*$' >> derived-uploads.lst
+# Should add these lines
+#listed items that should be unlisted:
+#unlisted items that should be listed:
+#items in buddhist-digital-resource-center-restricted that should not be:
+#items not in buddhist-digital-resource-center-restricted that should be:
+#items in inlibrary that should not be:
+#items not in inlibrary that should be:
+#items in geo_restricted that should not be:
+#items not in geo_restricted that should be:
+# -------------
+# Look for the uploads in the report
+#
+
+grep -x -f derived-uploads.lst ../../report.log > "${run_date}"-uploads-still-badcat.lst
+
+#
+# This will show which works appear in multiple list of failures, although not the specific
+# failures
+sort badcat.lst > dups.badcat.lst
+#
+# Get the actual collections list these works are in
+# This line creates a json file for each bad work
+# while read awork ; do printf $awork ; ia metadata $awork | jq '.metadata.collection' | tee -a collections/$awork.json ; done < badcat.lst | tee collections/2022-07-11-badcat.json
+# Just create one
+# Warning! This works right in ZSH, but doesnt in bash
+# Try cat badcat.lst | parallel 'printf ":%s:\t" {} ; ia metadata {} | jq .metadata.collection
+while read awork ; do printf "%s:\n" $awork ; ia metadata $awork | jq '.metadata.collection' ; done < badcat.lst | tee collections/"${run_date}"-badcat.json
+#
+# collections analysis:
+#
+# Everything in unlisted items that should be listed
+# Has these collections
+                #bdrc-W1KG25365[
+                #  "buddhist-digital-resource-center",
+                #  "buddhist-digital-resource-center-restricted",
+                #  "inlibrary"
+                # ]
+# The fillcache query:
+# ia search 'collection:buddhist-digital-resource-center' | sed -re 's/^\{"identifier": "bdrc-(.*)"\}$/\1/g' | sort | grep '^W' > cache/ia-bdrc.txt
+
