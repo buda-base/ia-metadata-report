@@ -2,32 +2,26 @@
 set -vx
 # Set time specific enviro vars
 export run_date=$(date +%Y-%m-%d)
-export UPLOAD_WORK_LIST=-ia-uploads.lst
+export UPLOAD_WORK_LIST=ia-uploads.lst
 # ------------------------
-# 1. Get the list of things that have failed derive
-# Run from .../ia-metadata-report/input/YYYY-mm-dd
-# ../../update-derive-fails.sh
-# Essentially # ia tasks --red-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' | sort > "${ftnow}".derivedfailed.lst
-# ln -s ${ftnow}.derivedfails.lst derivedfails.lst
-# ---------------------------------
-# 2. Derive the list of uploaded works from the ia service log extract
+# 1. Derive the list of uploaded works from the ia service log extract
 # (grep 'ia status: 0' sattva:~service/tmp/ia-con)
 # the list is a set of paths, need to extract the work only
 
 sed -re 's@.*/(W[0-9].*)@\1@'  /Volumes/home/prod/ao645/2022-06-09-ia-feed-success.lst | sort -u > "${UPLOAD_WORK_LIST}"
 # 2a. Remove the works which are still deriving, or not yet derived.
-# HACK - this is still
-cp ../Timb-derive-incomplete.lst derive-incomplete.lst
 #
 # Run these, and the rest, as Timb@tbrc.org
-ia tasks --blue-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g'  >> derive-incomplete.lst
-ia tasks --green-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' >> derive-incomplete.lst
-ia tasks --red-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' >> derive-incomplete.lst
+# Rats - ia 3.0.2 takes this away
+# ia tasks --blue-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g'  >> derive-incomplete.lst
+# ia tasks --green-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' >> derive-incomplete.lst
+# ia tasks --red-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' >> derive-incomplete.lst
+# Run this as timb@tbrc.org
+ia tasks > tim-tasks.json
+# Just get all the incomplete derives, who cares why
+cat tim-tasks.json| jq '. | select(.cmd = "derive.php") |  .identifier' | sed -e 's/"//g' -e 's/bdrc-//' | sort -u > excluded-works.lst
 #
-# 3. Remove all the failed or in process works
-sort -u derive-incomplete.lst > excluded-works.lst
-
-#
+# For more detail,... select(.color == "red") and .cmd == "derive.php")
 # 4. Find the list of derived uploads
 grep -vf excluded-works.lst  "${UPLOAD_WORK_LIST}" > derived-uploads.lst
 
