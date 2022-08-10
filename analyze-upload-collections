@@ -10,20 +10,36 @@ export UPLOAD_WORK_LIST=ia-uploads.lst
 
 sed -re 's@.*/(W[0-9].*)@\1@'  /Volumes/home/prod/ao645/2022-06-09-ia-feed-success.lst | sort -u > "${UPLOAD_WORK_LIST}"
 # 2a. Remove the works which are still deriving, or not yet derived.
-#
+# How many of Tim's derive fails still fail are in the upload list?
+
+# **************** This section is obsolete 2022-08-10
 # Run these, and the rest, as Timb@tbrc.org
 # Rats - ia 3.0.2 takes this away
 # ia tasks --blue-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g'  >> derive-incomplete.lst
 # ia tasks --green-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' >> derive-incomplete.lst
 # ia tasks --red-rows | cut -f1 | sed -re 's/bdrc-(.*)/\1/g' >> derive-incomplete.lst
 # Run this as timb@tbrc.org
-ia tasks > tim-tasks.json
+# There are none here as of 2022-08-10
+# ia tasks > tim-tasks.json
 # Just get all the incomplete derives, who cares why
-cat tim-tasks.json| jq '. | select(.cmd = "derive.php") |  .identifier' | sed -e 's/"//g' -e 's/bdrc-//' | sort -u > excluded-works.lst
+# cat tim-tasks.json| jq '. | select(.cmd = "derive.php") |  .identifier' | sed -e 's/"//g' -e 's/bdrc-//' | sort -u > excluded-works.lst
 #
 # For more detail,... select(.color == "red") and .cmd == "derive.php")
+# END ********** This section is obsolete 2022-08-10
+
+# get the derive fails from this list
 # 4. Find the list of derived uploads
-grep -vf excluded-works.lst  "${UPLOAD_WORK_LIST}" > derived-uploads.lst
+# grep -vf excluded-works.lst  "${UPLOAD_WORK_LIST}" > derived-uploads.lst
+# Turns out you can get this directly by
+cat $UPLOAD_WORK_LIST| parallel ia tasks {} -p "cmd=derive.php" | jq 'select(.status == null) | .identifier' >> derives-succeeded.lst
+# But this isn't a good idea - there are a lot of duplicate tasks
+# So, get all the tasks uploaded after 2022-06-09. Ignore everything else
+cat $UPLOAD_WORK_LIST| parallel --group 'ia tasks {} -p "cmd=derive.php" -p "submittime>=2022-04-01" | jq . '  > work-tasks
+
+ # And filter that list
+cat work-tasks | jq 'select( .status !=null) | .identifier' | tr -d '["]' |  sort -u > failed-derives.1
+cat work-tasks | jq 'select( .status == null) | .identifier' |  tr -d '["]' | sort -u > passed-derives.1
+# since they're both sorted, all the ones which s
 
 #------------------------------------
 # 5. which of the uploaded-derived is in the list of wrong catalogs (Assume they're both up to date)
@@ -43,7 +59,7 @@ grep -vf excluded-works.lst  "${UPLOAD_WORK_LIST}" > derived-uploads.lst
 # Look for the uploads in the report
 #
 
-grep -x -f derived-uploads.lst ../../report.log > "${run_date}"-uploads-still-badcat.lst
+grep -x -f passed-derives.1 ../../report.log > "${run_date}"-uploads-still-badcat.lst
 
 #
 # This will show which works appear in multiple list of failures, although not the specific

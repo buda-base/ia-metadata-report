@@ -1,0 +1,37 @@
+listed items that should be unlisted:
+unlisted items that should be listed:
+items in buddhist-digital-resource-center-restricted that should not be:
+items not in buddhist-digital-resource-center-restricted that should be:
+bdrc-W00EGS1016699
+bdrc-W00EGS1016750
+bdrc-W00EGS1016981
+bdrc-W00EGS1017196
+bdrc-W00KG03794
+bdrc-W1KG14667
+items in inlibrary that should not be:
+bdrc-W1KG14350
+bdrc-W1KG14534
+bdrc-W1KG14589
+bdrc-W1KG14607
+bdrc-W1KG91163
+items not in inlibrary that should be:
+bdrc-W00EGS1016699
+bdrc-W00EGS1016750
+bdrc-W00EGS1016981
+bdrc-W00EGS1017196
+bdrc-W00KG03794
+bdrc-W1KG14667
+bdrc-W1FPL113
+bdrc-W1FPL871
+bdrc-W1FPL938
+bdrc-W1FPL958
+bdrc-W1EAP3740
+items in geo_restricted that should not be:
+items not in geo_restricted that should be:
+bdrc-W00EGS1016699
+bdrc-W00EGS1016750
+bdrc-W00EGS1017196
+bdrc-W00KG03794
+bdrc-W1KG13759
+bdrc-W1KG14667
+bdrc-W1KG89148
